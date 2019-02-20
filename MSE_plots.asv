@@ -1,0 +1,16 @@
+function MSE_plots()
+    start_n = 1
+    max_n = 50;
+    for n=start_n:max_n
+        [own_loss(n), poly_loss(n), ~, ~, ~, ~, ~, ~, ~] = hitta_funktion(n);
+    end
+    figure(1)
+    set(gcf, 'Position',  [200, 200, 450, 300])
+    semilogy(poly_loss, "r*-")
+    legend({'\fontsize{14}Mean Square Error'}, 'Location','southeast')
+
+    figure(2)
+    set(gcf, 'Position',  [200, 200, 450, 300])
+    semilogy(own_loss, "b*-")
+    legend({'\fontsize{14}Mean Squaer Eroor'}, 'Location','southeast')
+end
